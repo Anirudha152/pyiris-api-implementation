@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script src="static/assets/js/jquery.min.js"></script>
+		<link rel="stylesheet" href="static/assets/css/font-awesome-4.7.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="static/assets/css/generator.css">
+		<link rel="stylesheet" href="static/assets/css/style.css">
+		<script src="static/assets/js/global.js"></script>
+		<script src="static/assets/js/generator.js"></script>
+		<meta charset="utf-8">
+		<meta name="description" content="PyIris - Generator">
+		<meta name="author" content="Anirudha Saraf">
+		<meta name="theme-color" content="#13a10e" />
+		<title>PyIris - Generator</title>
+	</head>
+	<body>
+		<div id="div_error">
+			<div id="div_error_message"></div>
+			<a id="a_error_close">x</a>
+		</div>
+		<div id="div_success">
+			<div id="div_success_message"></div>
+			<a id="a_success_close">x</a>
+		</div>
+		<nav>
+			<a href="home">Home</a>
+			<a href="generator" style="color: #13a10e">Generator</a>
+			<a href="listeners" style="color: #3b79ff">Listeners</a>
+			<a href="scouts" style="color: #e74856">Scouts</a>
+		</nav>
+		<div class="container hide">
+			<div class="row">
+				<div class="col-12">
+					<h1 class="label" id="h1_generator_heading">Generator</h1>
+
+					<div id="div_os">
+						<p style="margin-right: 10px">OS:</p>
+						<button id="button_os" class="select"></button>
+					</div>
+
+					<div id="div_options">
+						<div class="div_heading" id="div_options_heading">
+							<i class="fa arrow" id="i_options_heading"></i>
+							<h2 class="custom_label" id="h2_options_heading" style="margin-left: 10px">Options</h2>
+						</div>
+						<div id="div_options_content">
+							<table id="table_options_content_host">
+								<tr>
+									<th>Host</th>
+									<th></th>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" id="input_options_content_host" name="Host" placeholder="Hostname">
+										<button id="button_options_content_host" class="select">Add</button>
+									</td>
+									<td></td>
+								</tr>
+							</table>
+							<table id="table_options_content_port">
+								<tr>
+									<th>Port</th>
+								</tr>
+								<tr>
+									<td>
+										<input type="number" id="input_options_content_port" name="Port" placeholder="Port" style="width: 10em;">
+										<button id="button_options_content_port" class="select">Update</button>
+									</td>
+								</tr>
+								<tr>
+									<td id="td_options_content_port_value">
+										9999
+									</td>
+								</tr>
+							</table>
+							<table id="table_options_content_timeout">
+								<tr>
+									<th>Timeout</th>
+								</tr>
+								<tr>
+									<td>
+										<input type="number" id="input_options_content_timeout" name="Timeout" placeholder="Timeout (s)" style="width: 10em;">
+										<button id="button_options_content_timeout" class="select">Update</button>
+									</td>
+								</tr>
+								<tr>
+									<td id="td_options_content_timeout_value">
+										5
+									</td>
+								</tr>
+							</table>
+							<table id="table_options_content_compiler" style="table-layout: fixed;">
+								<tr>
+									<th>Compiler Configuration</th>
+									<th></th>
+								</tr>
+								<tr id="tr_options_content_compiler_compile">
+									<td>
+										Compile
+									</td>
+									<td>
+										<label class="switch">
+											<input type="checkbox" id="input_options_content_compiler_compile">
+											<span class="slider"></span>
+										</label>
+									</td>
+								</tr>
+								<tr id="tr_options_content_compiler_onefile">
+									<td>
+										Compile to one file
+									</td>
+									<td>
+										<label class="switch">
+											<input type="checkbox" id="input_options_content_compiler_onefile" checked>
+											<span class="slider"></span>
+										</label>
+									</td>
+								</tr>
+								<tr id="tr_options_content_compiler_windowed">
+									<td>
+										Windowed
+									</td>
+									<td>
+										<label class="switch">
+											<input type="checkbox" id="input_options_content_compiler_windowed" checked>
+											<span class="slider"></span>
+										</label>
+									</td>
+								</tr>
+								<tr id="tr_options_content_compiler_icon">
+									<td>
+										Custom .ico file
+									</td>
+									<td>
+										<label class="switch">
+											<input type="checkbox" id="input_options_content_compiler_icon">
+											<span class="slider"></span>
+										</label>
+									</td>
+								</tr>
+								<tr id="tr_options_content_compiler_iconPath">
+									<td>
+										Custom .ico filepath
+									</td>
+									<td>
+										<input type="text" id="input_options_content_compiler_iconPath" name="Custom Icon Path" placeholder="Path to icon">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div id="div_bases">
+						<div class="div_heading" id="div_bases_heading">
+							<i class="fa arrow" id="i_bases_heading"></i>
+							<h2 class="custom_label" id="h2_bases_heading" style="margin-left: 10px">Bases</h2>
+						</div>
+						<div id="div_bases_content">
+							<table id="table_bases_content">
+								<tr>
+									<th class="sticky">ID</th>
+		                            <th class="sticky">Name</th>
+			                        <th class="sticky">Description</th>
+		                            <th class="sticky">
+		                            </th>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div id="div_components">
+						<div class="div_heading" id="div_components_heading">
+							<i class="fa arrow" id="i_components_heading"></i>
+							<h2 class="custom_label" id="h2_components_heading" style="margin-left: 10px">Components</h2>
+						</div>
+						<div id="div_components_content">
+							<table id="table_components_content">
+								<tr>
+									<th class="sticky">ID</th>
+		                            <th class="sticky">Name</th>
+			                        <th class="sticky">Description</th>
+		                            <th class="sticky">
+			                            <label class="label_checkbox_container">
+				                            <input class="input_components_content" data-index=-1 type='checkbox'>
+		                                    <span class='checkmark'></span>
+		                                </label>
+		                            </th>
+								</tr>
+
+							</table>
+						</div>
+					</div>
+
+					<div id="div_encoders">
+						<div class="div_heading" id="div_encoders_heading">
+							<i class="fa arrow" id="i_encoders_heading"></i>
+							<h2 class="custom_label" id="h2_encoders_heading" style="margin-left: 10px">Encoders</h2>
+						</div>
+						<div id="div_encoders_content">
+							<table id="table_encoders_content">
+							<tr>
+								<th>ID</th>
+	                            <th>Name</th>
+		                        <th>Description</th>
+	                            <th></th>
+							</tr>
+						</table>
+						</div>
+					</div>
+
+					<div id="div_lodEncoders">
+						<div class="div_heading" id="div_lodEncoders_heading">
+							<i class="fa arrow" id="i_lodEncoders_heading"></i>
+							<h2 class="custom_label" id="h2_lodEncoders_heading" style="margin-left: 10px">Loaded Encoders</h2>
+						</div>
+						<div id="div_lodEncoders_content">
+							<table id="table_lodEncoders_content" style="">
+								<tr>
+									<th>Order</th>
+									<th>ID</th>
+									<th>Name</th>
+									<th><button class="red button_lodEncoders_content" data-index=-1>X</button></th>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<div id="div_custom">
+						<div class="div_heading" id="div_custom_heading">
+							<i class="fa arrow" id="i_custom_heading"></i>
+							<h2 class="custom_label" id="h2_custom_heading" style="margin-left: 10px">Custom Settings</h2>
+						</div>
+						<div id="div_custom_content">
+							<table id="table_custom_content_executePython">
+								<tr>
+									<th>Python Modules to load on</th>
+									<th></th>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" id="input_custom_content_executePython" name="Modules" placeholder="Enter module" maxlength="100">
+										<button id="button_custom_content_executePython" class="select">Add</button>
+									</td>
+								</tr>
+							</table>
+							<table id="table_custom_content_sleep">
+								<tr>
+									<th>Time for scout to sleep on start</th>
+								</tr>
+								<tr>
+									<td>
+										<input type="number" id="input_custom_content_sleep" name="scout_sleep" placeholder="Enter time to sleep (default is 60s)" maxlength="100" style="width: 25em !important;">
+									</td>
+								</tr>
+							</table>
+							<table id="table_custom_content_reqRoot">
+								<tr>
+									<th>Message to display while requesting root on startup</th>
+								</tr>
+								<tr>
+									<td>
+										<input type="text" id="input_custom_content_reqRoot" name="root message" placeholder="Enter message (leave blank for default)" style="width: 35em !important;">
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+
+					<br>
+					<br>
+
+					<button id="button_generate" class="select center" style="display: block; width: 300px !important; height: 50px; font-size: 20px"><i class="fa fa-circle-o-notch fa-spin" id="i_generate"></i>  Generate</button>
+
+					<br>
+
+					<div id="copyright">
+						<a href="https://github.com/angus-y/PyIris-backdoor">GitHub</a><br>
+						Version 2.0.0<br>
+						Copyright © 2020 Anirudha Saraf<br>
+						<a href="https://github.com/angus-y" target="_blank">https://github.com/angus-y</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,25 @@
+/* Heading of scouts page */
+#h1_scouts_heading {
+    font-size: 1.7rem;
+    margin-top: 1rem;
+    background: #2f3136;
+    color: #bfbfbb;
+    padding: 0.2em 1em;
+    border-radius: 3px;
+    border-left: solid #e74856 5px;
+    font-weight: 100;
+}
+
+#h2_scouts_heading {
+    float: right !important;
+    width: 92%;
+}
+
+#table_scouts_content tr {
+    height: 50px !important;
+}
+
+.clickable:hover {
+    cursor: pointer;
+    background: #42444a;
+}
